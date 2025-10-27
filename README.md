@@ -94,40 +94,59 @@ These are the specific versions used during the creation of this project.
 
 ### Backend Setup
 
-**Important**: Ensure PostgreSQL 18.0 is installed and running on your system before proceeding.
+**Important**: Ensure PostgreSQL 18.0 is installed and running on your system before proceeding. See [postgresqlsetup.md](./postgresqlsetup.md) for installation instructions if needed.
 
-1. Navigate to the backend directory:
+1. **Navigate to the backend directory:**
 
 ```powershell
 cd backend
 ```
 
-2. Install dependencies:
+2. **Install dependencies:**
 
 ```powershell
 npm install
 ```
 
-3. Set up environment variables by creating a `.env` file in the `backend` directory:
+3. **Create the database in PostgreSQL:**
+
+Before setting up environment variables, create your database:
+
+```bash
+psql -U postgres
+```
+
+Then run:
+
+```sql
+CREATE DATABASE vacationdb;
+\q
+```
+
+**Note**: You can use any database name you prefer, just make sure to match it in your `.env` file.
+
+4. **Set up environment variables:**
+
+Create a `.env` file in the `backend` directory with the following content:
 
 ```env
 NODE_ENV=development
 PORT=5000
 JWT_SECRET=dev-secret-key-change-in-production-123456789
 JWT_EXPIRES_IN=24h
-DATABASE_URL=postgresql://postgres:123123@localhost:5432/vacationdb
+DATABASE_URL=postgresql://postgres:YOUR_PASSWORD@localhost:5432/vacationdb
 CORS_ORIGIN=http://localhost:5173
 RATE_LIMIT_WINDOW_MS=900000
 RATE_LIMIT_MAX=100
 ```
 
-**Note**:
+**Important**:
 
-- Update the `DATABASE_URL` with your PostgreSQL credentials. The example above uses `postgres` as username, `123123` as password, and `vacationdb` as database name. Ensure you have created the `vacationdb` database in PostgreSQL 18.0 before running migrations.
-- The `RATE_LIMIT_WINDOW_MS` and `RATE_LIMIT_MAX` variables are optional and have default values if not provided.
-- The PostgreSQL service must be running on your system before starting the application.
+- Replace `YOUR_PASSWORD` with your actual PostgreSQL password
+- Replace `vacationdb` if you used a different database name
+- `RATE_LIMIT_WINDOW_MS` and `RATE_LIMIT_MAX` are optional and have default values
 
-4. Generate Prisma client and apply database migrations:
+5. **Generate Prisma client and apply database migrations:**
 
 ```powershell
 npx prisma generate
