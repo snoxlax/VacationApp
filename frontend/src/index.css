@@ -1,0 +1,180 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Color Palette */
+  --color-bg: #001141;
+  --color-bg-dark: #121212;
+  --color-bg-light: #f8f9fa;
+  --color-bg-white: #ffffff;
+  --color-bg-main: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --color-bg-main-alt: linear-gradient(100deg, #1f4c7e 0%, #1b0e27 100%);
+  --color-bg-input: rgba(14, 0, 57, 0.96);
+  --color-bg-cyan: cyan;
+
+  --requester-dashboard-bg: rgb(157, 175, 183);
+
+  --color-text: #333333;
+  --color-text-light: #f5f5f5;
+  --color-text-white: #ffffff;
+  --color-text-dark: #2c3e50;
+  --color-text-muted: #6c757d;
+  --color-text-secondary: #495057;
+  --color-text-placeholder: rgb(164, 164, 164);
+
+  --color-primary: #667eea;
+  --color-secondary: #764ba2;
+  --color-accent: #0080ff;
+  --color-accent-alt: #007bff;
+  --color-link: #646cff;
+  --color-link-hover: #535bf2;
+
+  --color-border: #e0e0e0;
+  --color-border-light: #e9ecef;
+  --color-border-dark: #000000;
+
+  /* Success/Error/Info Colors */
+  --color-success-bg: #d4edda;
+  --color-success-text: #155724;
+  --color-success-border: #c3e6cb;
+  --color-error-bg: #f8d7da;
+  --color-error-text: #721c24;
+  --color-error-border: #f5c6cb;
+  --color-info-bg: #d1ecf1;
+  --color-info-text: #0c5460;
+  --color-info-border: #bee5eb;
+
+  /* Button Colors */
+  --color-btn-primary: #2706ab;
+  --color-btn-secondary: #6c757d;
+  --color-btn-secondary-hover: #545b62;
+
+  /* Shadow Colors */
+  --color-shadow-light: rgba(0, 0, 0, 0.05);
+  --color-shadow-medium: rgba(0, 0, 0, 0.1);
+  --color-shadow-focus: rgba(0, 123, 255, 0.1);
+  --color-shadow-btn: rgba(108, 117, 125, 0.3);
+
+  /* Font System */
+  --font-base: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Helvetica, Arial, sans-serif;
+  --font-size-base: 16px;
+  --line-height-base: 1.6;
+
+  /* Spacing System */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+
+  /* Border Radius */
+  --border-radius: 8px;
+  --border-radius-sm: 6px;
+  --border-radius-lg: 10px;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease-in-out;
+  --transition-normal: 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: var(--color-bg-main-alt);
+  padding: var(--spacing-md);
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-base);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+a {
+  font-weight: 500;
+  color: var(--color-link);
+  text-decoration: inherit;
+}
+a:hover {
+  color: var(--color-link-hover);
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: var(--border-radius);
+  border: 1px solid transparent;
+  padding: 0.5rem;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--color-btn-primary);
+  cursor: pointer;
+  width: fit-content;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: var(--color-link);
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+nav {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+/* Global Header Styles */
+header {
+  margin-bottom: 2rem;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: var(--color-border-dark);
+  }
+  a:hover {
+    color: var(--color-border-dark);
+  }
+  button {
+    background-color: var(--color-border-dark);
+  }
+}

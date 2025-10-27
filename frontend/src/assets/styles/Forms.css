@@ -1,0 +1,216 @@
+/* Form Group Container */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Form Labels - Universal */
+.form-group label {
+  display: block;
+  margin-bottom: var(--spacing-sm);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+/* Form Inputs - Universal */
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 12px var(--spacing-md);
+  border: 2px solid var(--color-border-light);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: border-color var(--transition-normal);
+  background: var(--color-bg-input);
+  color: var(--color-text-white);
+}
+
+/* Placeholder Text Color */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--color-text-placeholder);
+  opacity: 1;
+}
+
+/* Form Focus States - Universal */
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-shadow-focus);
+}
+
+/* Textarea - Universal */
+.form-group textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+/* Character Counter */
+.char-count {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  margin-left: 8px;
+}
+
+.char-count.error {
+  color: var(--color-error);
+}
+
+/* Form Help Text - Universal */
+.form-help {
+  display: block;
+  margin-top: 5px;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+/* Button Styles */
+.btn {
+  display: inline-block;
+  padding: 12px var(--spacing-lg);
+  border: none;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  text-align: center;
+  background: var(--color-btn-primary);
+  color: var(--color-text-white);
+}
+
+.btn:hover {
+  background: var(--color-btn-secondary-hover);
+  box-shadow: 0 4px 12px var(--color-shadow-btn);
+  transform: translateY(-1px);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-primary {
+  background: var(--color-btn-primary);
+}
+
+.btn-primary:hover {
+  background: var(--color-btn-secondary-hover);
+}
+
+/* Auth Pages */
+.signin-page,
+.signup-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: var(--spacing-md);
+  box-sizing: border-box;
+}
+
+/* Auth Forms */
+.signin-form,
+.signup-form {
+  margin: 0 auto;
+  background: var(--color-bg-white);
+  padding: 30px;
+  box-shadow: 0 4px 6px var(--color-shadow-medium);
+  border-radius: var(--border-radius);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.signin-form {
+  max-width: 400px;
+}
+
+.signup-form {
+  max-width: 500px;
+}
+
+.signin-form h2,
+.signup-form h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--color-text-dark);
+  font-size: 2rem;
+}
+
+/* Request Form */
+.request-form-container {
+  width: 100%;
+}
+
+.request-form-container h2 {
+  margin-bottom: 20px;
+  color: var(--color-text-dark);
+  font-size: 1.8rem;
+}
+
+.request-form {
+  margin: 0 auto;
+  background: var(--color-bg-light);
+  padding: 30px;
+  box-shadow: 0 4px 6px var(--color-shadow-medium);
+  border-radius: var(--border-radius);
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Auth Footers */
+.signin-footer,
+.signup-footer {
+  display: flex;
+  background: var(--color-bg-light);
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: var(--border-radius);
+  width: 100%;
+}
+
+.signin-footer {
+  max-width: 400px;
+}
+
+.signup-footer {
+  max-width: 500px;
+}
+
+.signin-footer p,
+.signup-footer p {
+  margin-bottom: 15px;
+  color: var(--color-text-muted);
+}
+
+.signin-footer .btn,
+.signup-footer .btn {
+  display: inline-block;
+  padding: 12px var(--spacing-lg);
+  border: none;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  text-align: center;
+  background: var(--color-btn-secondary);
+  color: var(--color-text-white);
+}
+
+.signin-footer .btn:hover,
+.signup-footer .btn:hover {
+  background: var(--color-btn-secondary-hover);
+  box-shadow: 0 4px 12px var(--color-shadow-btn);
+}
